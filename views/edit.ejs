@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+    <section id="edit-post">
+
+        <div class="container col-xxl-8 pb-5 pt-5 ">
+            <!-- values stored in the server is brought to show here as value -->
+            <form action="/edit/<%= locals.post.id %>" method="POST">
+                <input type="text" class="form-control mb-3" name="writerName" value="<%= post.writerName %>"
+                    placeholder="Enter your name">
+                <input type="text" class="form-control mb-3" name="postTitle" value="<%= post.postTitle %>"
+                    placeholder="Enter title">
+                <textarea class="form-control mb-3" name="postContent" rows="5"
+                    placeholder="Write your post here"><%= post.postContent %></textarea>
+                <button type="submit" class="btn submit-button">Update Post</button>
+            </form>
+        </div>
+
+    </section>
+<%- include("partials/footer.ejs") %>

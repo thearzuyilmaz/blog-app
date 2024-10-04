@@ -1,0 +1,65 @@
+html, body {
+    height: 100%; /* Ensure full height */
+    margin: 0; /* Remove default margin */
+}
+
+#featured {
+    background-color: #D9910B;
+}
+
+.post-image {
+    border-radius: 50%;
+    height: 100px;
+}
+
+.about {
+    background-color: #8C3503;
+    color: #fee7d9;
+}
+
+.signUpButton {
+    background-color: #5bc7fd;
+    color: #f8fdff;
+
+}
+
+#edit-post {
+    background-color: white;
+}
+
+
+
+.footer-text {
+    color: #f8fdff; 
+    text-align: center;
+    font-family: "Sanchez", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 5px;
+}
+
+
+
+main {
+    background-color: #f7fcff;
+}
+
+#edit-post {
+    background-color: #f7fcff;
+}
+
+.submit-button {
+    background-color: #8C3503;
+    color: #fee7d9;
+    border: none;
+    
+}
+
+.submit-button:hover {
+    background-color: #D9910B; /* New background color on hover */
+    color: #ffffff; /* Optional: change text color on hover */
+}
+
+.blog-post {
+    background-color: #deedf6;
+}

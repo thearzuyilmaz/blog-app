@@ -1,0 +1,126 @@
+<section id="posts">
+
+    <div class="container col-xxl-8 pb-5 mt-5">
+
+        <div class="row g-5">
+
+            <div class="col-md-8">
+
+                <div class="container mb-5">
+                    <article>
+                        <h2 class="display-5 link-body-emphasis mb-1">Welcome</h2>
+                        <p class="blog-post-meta">October 2, 2024 by Arzu</p>
+
+                        <p>Whether you're here to explore new ideas, stay updated on the latest trends, 
+                            or simply to enjoy thoughtful insights, you're in the right place. This space is all about sharing knowledge, experiences, 
+                            and sparking meaningful conversations. Feel free to browse through the posts, leave comments, and become part of 
+                            our community. Whether it's tech innovations, creative ideas, or personal reflections, you'll find something that 
+                            resonates. Let's dive into this journey together!</p>
+                    </article>
+                </div>
+
+                <% if (locals.allPosts){ %>
+
+                    <% allPosts.forEach((post)=> { %>
+
+                        <div class="container">
+                            <article class="blog-post mb-2 p-3" style="border-radius: 10px">
+
+                                <h2 class="display-5 link-body-emphasis mb-1"><%= post.postTitle %></h2>
+                                <p class="blog-post-meta"><%=post.postDate %> by <%=post.writerName%></p>
+
+                                <p><%= post.postContent %></p>
+
+                                <!-- Edit Button for each id -->
+                                <form action="/edit/<%=post.id %>" method="GET" style="display:inline;">
+                                    <button type="submit" class="btn btn-outline-secondary btn-sm">Edit</button>
+                                </form>
+
+                                <!-- Delete Button for each id -->
+                                <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+                                    <button type="submit" class="btn btn-outline-secondary btn-sm">Delete</button>
+                                </form>
+
+                            </article>
+                        </div>
+
+
+
+                        <% }); %>
+
+                            <% } %>
+
+                                <div class="container">
+                                    <form id="postForm" action="/submit" method="POST">
+                                        <h3 class="mt-5">Add a new post</h3>
+                                        <input type="text" class="form-control mb-3" name="writerName"
+                                            placeholder="Enter your name">
+                                        <input type="text" class="form-control mb-3" name="postTitle"
+                                            placeholder="Enter title">
+                                        <textarea class="form-control mb-3" rows="5" name="postContent"
+                                            placeholder="Write your post here"></textarea>
+
+                                        <button type="submit" class="btn btn-primary mb-3 submit-button">Submit</button>
+                                    </form>
+                                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 rounded about">
+                        <h4 class="fst-italic">About</h4>
+                        <p class="mb-0">Customize this section to tell your visitors a little bit about your
+                            publication, writers, content, or something else entirely. Totally up to you.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="fst-italic">Recent posts</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#">
+                                    <img src="https://picsum.photos/200" alt="Random Nature Image" class="post-image">
+
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Example blog post title</h6>
+                                        <small class="text-body-secondary">January 15, 2024</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#">
+
+                                    <img src="https://picsum.photos/200" alt="Random Nature Image" class="post-image">
+
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">This is another blog post title</h6>
+                                        <small class="text-body-secondary">January 14, 2024</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#">
+
+                                    <img src="https://picsum.photos/200" alt="Random Nature Image" class="post-image">
+
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Longer blog post title: This one has multiple lines!
+                                        </h6>
+                                        <small class="text-body-secondary">January 13, 2024</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+</div>
